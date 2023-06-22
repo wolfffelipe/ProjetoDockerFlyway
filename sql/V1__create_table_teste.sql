@@ -1,0 +1,4 @@
+CREATE TABLE dbo.Teste (
+    ID_Teste INT IDENTITY NOT NULL,
+	NM_Teste VARCHAR(100) NULL
+);

@@ -1,1 +1,0 @@
-alter table dbo.Usuario add dt_nasc smalldatetime null

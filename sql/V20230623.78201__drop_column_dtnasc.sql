@@ -1,1 +1,0 @@
-alter table dbo.Usuario drop column dt_nasc

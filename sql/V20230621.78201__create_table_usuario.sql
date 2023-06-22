@@ -1,4 +1,0 @@
-CREATE TABLE dbo.Usuario (
-    ID_Usuario INT IDENTITY NOT NULL,
-	NM_Usuario VARCHAR(100) NULL
-);

@@ -1,1 +1,0 @@
-alter table dbo.Usuario add cpf varchar(11)
