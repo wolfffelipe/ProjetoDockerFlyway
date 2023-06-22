@@ -1,0 +1,1 @@
+alter table dbo.Usuario add idade tinyint
