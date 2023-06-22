@@ -26,6 +26,6 @@ jobs:
             -v ${{ github.workspace }}/sql:/flyway/sql \
             -v ${{ github.workspace }}/conf/homolog:/flyway/conf \
             flyway/flyway migrate \
-            -url=jdbc:sqlserver://172.26.16.1:1433;databaseName=DBHomolog \
+            -url=jdbc:sqlserver://${{ secrets.SERVER_NAME }};databaseName=${{ secrets.DB_NAME }} \
             -user=${{ secrets.DB_USERNAME }} \
             -password=${{ secrets.DB_PASSWORD }}
