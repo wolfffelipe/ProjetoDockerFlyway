@@ -1,0 +1,2 @@
+# ProjetoDockerFlyway
+Versionamento SQL
