@@ -19,10 +19,13 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
           
-      - name: Build and push Docker images
-        uses: docker/build-push-action@v4.1.1
-        with:
-          context: .
-          push: true
-          tags: |
-            wolfffelipe/teste:v1
+      - name: Run Docker container
+        run: |
+          docker run --rm \
+            -e FLYWAY_BASELINE_ON_MIGRATE=true \
+            -v ${{ github.workspace }}/sql:/flyway/sql \
+            -v ${{ github.workspace }}/conf/homolog:/flyway/conf \
+            flyway/flyway migrate \
+            -url=jdbc:sqlserver://172.26.16.1:1433;databaseName=DBHomolog \
+            -user=${{ secrets.DB_USERNAME }} \
+            -password=${{ secrets.DB_PASSWORD }}
